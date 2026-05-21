@@ -2,11 +2,14 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+**Archify AI Hackathon Project**
+Powered by Google Gemini & Antigravity
+
+# Run and deploy your antigravity app
 
 This contains everything you need to run your app locally.
 
-View your app in AI Studio: https://ai.studio/apps/2fc596c7-ff54-456c-89d4-e1598284e324
+View your app in google antigravity: 
 
 ## Run Locally
 
