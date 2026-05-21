@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Archify AI | Advanced Spatial Intelligence</title>
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Archify AI spatial planning, 2D to 3D visualization, and interior redesign.">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Archify AI">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-neutral: #eff1f5;
+            --accent: #000000;
+            --glass: rgba(255, 255, 255, 0.82);
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-neutral);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,0.05) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,0.03) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,0.03) 0, transparent 50%);
+            color: #111111;
+            -webkit-tap-highlight-color: transparent;
+            overflow-x: hidden;
+        }
+
+        /* Language specific fonts */
+        [lang="ur"], [lang="sd"] {
+            font-family: 'Noto Sans Arabic', sans-serif !important;
+            font-style: normal !important;
+        }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(28px) saturate(200%);
+            -webkit-backdrop-filter: blur(28px) saturate(200%);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 32px -4px rgba(0,0,0,0.05);
+        }
+        .neo-card {
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.06);
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Reconstruction Scan Animation */
+        @keyframes scan-line {
+            0% { top: 0%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        .scan-pulse {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ec4899, #f59e0b, #ec4899, transparent);
+            box-shadow: 0 0 25px #ec4899;
+            z-index: 30;
+            animation: scan-line 4s infinite ease-in-out;
+        }
+
+        /* Tech Blueprint Grid */
+        .blueprint-grid {
+            background-image: 
+                linear-gradient(rgba(236, 72, 153, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(236, 72, 153, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: grid-shift 20s infinite linear;
+        }
+        @keyframes grid-shift {
+            from { background-position: 0 0; }
+            to { background-position: 40px 40px; }
+        }
+
+        /* High-Intensity Sequential Glow Animations */
+        @keyframes glow-step-indigo {
+            0%, 100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); transform: scale(1); }
+            50% { box-shadow: 0 0 35px rgba(79, 70, 229, 0.6); transform: scale(1.05); }
+        }
+        @keyframes glow-step-amber {
+            0%, 100% { box-shadow: 0 0 0 rgba(245, 158, 11, 0); transform: scale(1); }
+            50% { box-shadow: 0 0 40px rgba(245, 158, 11, 0.6); transform: scale(1.05); }
+        }
+        @keyframes glow-step-pink {
+            0%, 100% { box-shadow: 0 0 0 rgba(236, 72, 153, 0); transform: scale(1); }
+            50% { box-shadow: 0 0 50px rgba(236, 72, 153, 0.7); transform: scale(1.05); }
+        }
+
+        .animate-glow-1 { animation: glow-step-indigo 2s ease-in-out infinite; }
+        .animate-glow-2 { animation: glow-step-amber 2s ease-in-out infinite; }
+        .animate-glow-3 { animation: glow-step-pink 2s ease-in-out infinite; }
+
+        @keyframes reveal {
+            from { opacity: 0; transform: scale(0.98) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .animate-reveal { animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

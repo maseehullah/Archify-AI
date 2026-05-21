@@ -1,0 +1,10 @@
+{
+  "name": "Remix: Archify AI-D-data",
+  "description": "Professional AI-powered architectural assistant with advanced spatial auto-detection, photorealistic human-centered redesigns, and high-fidelity project simulation for premium interior and landscape planning.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
